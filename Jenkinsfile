@@ -41,12 +41,12 @@ node {
    stage('Deploy') {
       if (isUnix()) {
          echo "Deployment Started"
-            withCredentials([usernamePassword(credentialsId: 'c9cb559a-7c9a-43ce-b1bc-d8aa2dfef0bb', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
+            withCredentials([usernamePassword(credentialsId: 'anypoint-credentials', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
                 sh 'mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}'
             }
       } else {
             echo "Deployment Started"
-            withCredentials([usernamePassword(credentialsId: 'c9cb559a-7c9a-43ce-b1bc-d8aa2dfef0bb', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
+            withCredentials([usernamePassword(credentialsId: 'anypoint-credentials', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
                 bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
             }
       }
