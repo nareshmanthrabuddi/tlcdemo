@@ -33,9 +33,9 @@ node {
     stage('SONAR Analysis') {
       // Run the maven build
       if (isUnix()) {
-         sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ec0d1390b33ce434b483e2c0d43c6be2e36cfcf9'
+         sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ad7be545322b613c9cece9fc51da457bda626046'
       } else {
-         bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ec0d1390b33ce434b483e2c0d43c6be2e36cfcf9'
+         bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ad7be545322b613c9cece9fc51da457bda626046'
       }
    }
    stage('Deploy') {
