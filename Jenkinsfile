@@ -10,7 +10,7 @@ node {
      ])
    ])
    stage('Check out the code from Git Repository') { // for display purposes
-      git credentialsId: '5ea37bf2-e9f9-4358-89d1-8b246130f034', url: 'https://github.com/nareshmanthrabuddi/devopsdemo.git'
+      git credentialsId: '712ccd9f-76cb-4544-b206-d0f612954bc4', url: 'https://github.com/nareshmanthrabuddi/tlcdemo.git'
    }
    stage('Clean') {
       // Run the maven build
