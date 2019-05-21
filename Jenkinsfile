@@ -1,5 +1,4 @@
 node {
-   def mvnHome
     properties([
      parameters([
        choiceParam(
